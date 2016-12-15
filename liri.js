@@ -14,7 +14,7 @@ var client = new twitnpm ({
 
 // commands
 var commands = process.argv[2];
-// name
+// name for movie search
 var name = "";
 for (var i = 3; i < process.argv.length; i++) {
     name += process.argv[i] + " ";
