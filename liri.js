@@ -23,7 +23,7 @@ for (var i = 3; i < process.argv.length; i++) {
 var nobody = "http://www.omdbapi.com/?t=mr+nobody&y=&plot=short&r=json&tomatoes=true";
 var url = "http://www.omdbapi.com/?t=" + name + "&y=&plot=short&r=json&tomatoes=true";
 
-// command lines
+// twitter calls!
 if (commands == 'my-tweets') {
     var params = {screen_name: 'Victori98770047'};
     client.get('statuses/user_timeline', params, function(error, tweets, response) {
@@ -37,7 +37,7 @@ if (commands == 'my-tweets') {
         }
     });
 }
-
+//omdb stuff
 else if (commands == 'movie-this' && name) {
     request(url, function (error, response, body) {
         if (!error && response.statusCode == 200) {
@@ -81,4 +81,16 @@ fs.readFile('random.txt', 'utf8', function(error, data){
 	if (error) return console.log(error);
 
 	console.log(data);
+});
+
+function spotifyThis(){
+var spotify = require('spotify');
+ 
+spotify.search({ type: 'track', query: 'dancing in the moonlight' }, function(err, data) {
+    if ( err ) {
+        console.log('Error occurred: ' + err);
+        return;
+    }
+ 
+    }// Do something with 'data' 
 });
